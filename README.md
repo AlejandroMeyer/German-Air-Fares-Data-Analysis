@@ -1,6 +1,8 @@
-# German Air Fares Data Analysis
+# ✈️ German Air Fares Data Analysis
 
 This project performs exploratory data analysis (EDA) on airfares data related to flights in Germany. The dataset includes information about departure and arrival cities, airlines, flight prices, and other related attributes. The goal of the analysis is to uncover patterns and gain valuable insights into flight prices based on various factors such as departure and arrival cities, airlines, departure time, and more.
+
+The data used in this analysis is stored in a CSV file, with additional details about the columns in a text file. The data was sourced from Kaggle, and the link to the dataset can be found below. The `documentation.pdf` file provides an explanation of how the SQL code functions.
 
 ## Project Components
 
@@ -23,8 +25,9 @@ This project performs exploratory data analysis (EDA) on airfares data related t
    - A heatmap displays the average flight price by departure and arrival cities.
    - A bar plot visualizes the average price of flights by airline.
 
+5. **Supporting Documentation**  
+   - A **CSV file** contains the main dataset used in the analysis.
+   - A **TXT file** explains the details of each column in the dataset.
+   - The data was sourced from [Kaggle's German Airfares dataset](https://www.kaggle.com/datasets).
+   - The **documentation.pdf** explains how the SQL code functions and how the data was processed.
 
-You can install the required libraries using `pip`:
-
-```bash
-pip install configparser pyodbc pandas numpy matplotlib seaborn scikit-learn
