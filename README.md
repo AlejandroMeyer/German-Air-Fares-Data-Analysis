@@ -28,6 +28,7 @@ The data used in this analysis is stored in a CSV file, with additional details 
 5. **Supporting Documentation**  
    - A **CSV file** contains the main dataset used in the analysis.
    - A **TXT file** explains the details of each column in the dataset.
-   - The data was sourced from [Kaggle's German Airfares dataset](www.kaggle.com/datasets/darjand/domestic-german-air-fares/data).
+   - The data was sourced from [Kaggle's German Airfares dataset](https://www.kaggle.com/datasets/darjand/domestic-german-air-fares/data).
    - The **documentation.pdf** explains how the SQL code functions and how the data was processed.
+
 
