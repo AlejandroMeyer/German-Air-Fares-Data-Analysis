@@ -1,0 +1,10 @@
+departure_city: The city from which the flight departs.
+arrival_city: The city to which the flight arrives.
+scrape_date: The date when flight price information was retrieved.
+departure_date: The departure date of the flight (25-10-2019 to 24-04-2020).
+departure_date_distance: How far in advance (e.g., "1 week") the flight was booked.
+departure_time: The departure time of the flight.
+arrival_time: The arrival time of the flight.
+airline: The airline that operates the flight.
+stops: The number of layovers or stops during the flight.
+price (€): The price of the flight ticket in Euros.
