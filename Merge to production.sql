@@ -4,14 +4,14 @@ CREATE TABLE [DWH].[dbo].[temp_german_air_fares]
 (
 	[departure_city]			VARCHAR(30) NULL,
 	[arrival_city]				VARCHAR(30) NULL,
-	[scrape_date]				VARCHAR(10)	NULL,
-	[departure_date]			VARCHAR(10)	NULL,
-	[departure_date_distance]	VARCHAR(10) NULL,
+	[scrape_date]				VARCHAR(10) NULL,
+	[departure_date]			VARCHAR(10) NULL,
+	[departure_date_distance]		VARCHAR(10) NULL,
 	[departure_time]			VARCHAR(10) NULL,
 	[arrival_time]				VARCHAR(10) NULL,
-	[airline]					VARCHAR(30) NULL,
-	[stops]						VARCHAR(10) NULL,
-	[price]						VARCHAR(30)	NULL,
+	[airline]				VARCHAR(30) NULL,
+	[stops]					VARCHAR(10) NULL,
+	[price]					VARCHAR(30) NULL,
 )
 
 
@@ -230,26 +230,26 @@ BEGIN
 		AND DESTINATION.[arrival_city]				= SOURCE.[arrival_city]				
 		AND DESTINATION.[scrape_date]				= SOURCE.[scrape_date]				
 		AND DESTINATION.[departure_date]			= SOURCE.[departure_date]			
-		AND DESTINATION.[departure_date_distance]	= SOURCE.[departure_date_distance]	
+		AND DESTINATION.[departure_date_distance]		= SOURCE.[departure_date_distance]	
 		AND DESTINATION.[departure_time]			= SOURCE.[cleaned_departure_time]	
 		AND DESTINATION.[arrival_time]				= SOURCE.[cleaned_arrival_time]		
-		AND DESTINATION.[airline]					= SOURCE.[airline]					
-		AND DESTINATION.[stops]						= SOURCE.[stops]						
-		AND DESTINATION.[price]						= SOURCE.[price]						
+		AND DESTINATION.[airline]				= SOURCE.[airline]					
+		AND DESTINATION.[stops]					= SOURCE.[stops]						
+		AND DESTINATION.[price]					= SOURCE.[price]						
 	)
 	WHEN MATCHED THEN 
 		UPDATE SET 
 			DESTINATION.[departure_city]			= SOURCE.[departure_city]			
-			,DESTINATION.[arrival_city]				= SOURCE.[arrival_city]				
-			,DESTINATION.[scrape_date]				= SOURCE.[scrape_date]				
+			,DESTINATION.[arrival_city]			= SOURCE.[arrival_city]				
+			,DESTINATION.[scrape_date]			= SOURCE.[scrape_date]				
 			,DESTINATION.[departure_date]			= SOURCE.[departure_date]			
-			,DESTINATION.[departure_date_distance]	= SOURCE.[departure_date_distance]	
+			,DESTINATION.[departure_date_distance]		= SOURCE.[departure_date_distance]	
 			,DESTINATION.[departure_time]			= SOURCE.[cleaned_departure_time]	
-			,DESTINATION.[arrival_time]				= SOURCE.[cleaned_arrival_time]		
-			,DESTINATION.[airline]					= SOURCE.[airline]					
-			,DESTINATION.[stops]					= SOURCE.[stops]						
-			,DESTINATION.[price]					= SOURCE.[price]
-			,DESTINATION.[last_update]				= GETDATE()
+			,DESTINATION.[arrival_time]			= SOURCE.[cleaned_arrival_time]		
+			,DESTINATION.[airline]				= SOURCE.[airline]					
+			,DESTINATION.[stops]				= SOURCE.[stops]						
+			,DESTINATION.[price]				= SOURCE.[price]
+			,DESTINATION.[last_update]			= GETDATE()
 	WHEN NOT MATCHED THEN
         INSERT (
             [departure_city],
@@ -288,15 +288,15 @@ SELECT TOP 2 * FROM [DWH].[dbo].[german_air_fares] WITH(NOLOCK)
 CREATE TABLE [DWH].[dbo].[german_air_fares](
 	[departure_city]			VARCHAR(30) NULL,
 	[arrival_city]				VARCHAR(30) NULL,
-	[scrape_date]				DATE		NULL,
-	[departure_date]			DATE		NULL,
-	[departure_date_distance]	INT			NULL,
-	[departure_time]			TIME		NULL,
-	[arrival_time]				TIME		NULL,
-	[airline]					VARCHAR(30) NULL,
-	[stops]						VARCHAR(2)	NULL,
-	[price]						INT			NULL,
-	[last_update]				DATETIME	NOT NULL,
+	[scrape_date]				DATE	    NULL,
+	[departure_date]			DATE	    NULL,
+	[departure_date_distance]		INT	    NULL,
+	[departure_time]			TIME	    NULL,
+	[arrival_time]				TIME	    NULL,
+	[airline]				VARCHAR(30) NULL,
+	[stops]					VARCHAR(2)  NULL,
+	[price]					INT	    NULL,
+	[last_update]				DATETIME    NOT NULL,
 )
 GO
 	ALTER TABLE [dbo].[german_air_fares] ADD  CONSTRAINT [german_air_fareslastupdate]  DEFAULT (GETDATE()) FOR [last_update]
